@@ -1,0 +1,23 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: tensquare-article  #指定微服务名称
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tensquare_article?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC
+    username: root
+    password: mypassword
+  jpa:
+    database: mysql
+    show-sql: true
+  redis:
+    host: localhost
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true

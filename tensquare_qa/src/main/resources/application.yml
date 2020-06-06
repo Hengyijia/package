@@ -1,0 +1,29 @@
+server:
+  port: 9003
+
+spring:
+  application:
+    name: tensquare-qa  #指定微服务名称
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tensquare_qa?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC
+    username: root
+    password: mypassword
+  jpa:
+    database: mysql
+    show-sql: true
+
+jwt:
+  config:
+    key: hengyijia #设置盐
+    #普通用户可以长时间登陆，不用设置令牌过期时间
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true
+feign:
+  hystrix:
+    enabled: true    #开启熔断器

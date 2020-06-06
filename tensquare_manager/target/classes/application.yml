@@ -1,0 +1,50 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: tensquare-manager
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true   #模块之间可以跨域访问
+
+jwt:
+  config:
+    key: lijian  #设置盐
+    ttl: 3600000 #设置过期时间(毫秒)
+zuul:
+  routes:
+
+    tensquare-base:
+      path: /base/**
+      serviceId: tensquare-base
+    tensquare-user:             #活动
+      path: /user/**            #配置请求url的请求规则
+      serviceId: tensquare-user #指定Eureka注册中心的服务id
+    tensquare-qa:             #活动
+      path: /qa/**            #配置请求url的请求规则
+      serviceId: tensquare-qa #指定Eureka注册中心的服务id
+    tensquare-friend:             #活动
+      path: /friend/**            #配置请求url的请求规则
+      serviceId: tensquare-friend #指定Eureka注册中心的服务id
+    tensquare-article:             #活动
+      path: /article/**            #配置请求url的请求规则
+      serviceId: tensquare-article #指定Eureka注册中心的服务id
+    tensquare-gathering:             #活动
+      path: /gathering/**            #配置请求url的请求规则
+      serviceId: tensquare-gathering #指定Eureka注册中心的服务id
+    tensquare-recruit:             #活动
+      path: /recruit/**            #配置请求url的请求规则
+      serviceId: tensquare-recruit #指定Eureka注册中心的服务id
+    tensquare-spit:             #活动
+      path: /spit/**            #配置请求url的请求规则
+      serviceId: tensquare-spit #指定Eureka注册中心的服务id
+    tensquare-sms:             #活动
+      path: /sms/**            #配置请求url的请求规则
+      serviceId: tensquare-sms #指定Eureka注册中心的服务id
+    tensquare-search:             #活动
+      path: /search/**            #配置请求url的请求规则
+      serviceId: tensquare-search #指定Eureka注册中心的服务id

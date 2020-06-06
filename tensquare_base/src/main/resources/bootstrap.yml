@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      name: base      #config配置文件前面字段
+      profile: dev    #config配置文件后面字段
+      label: master
+      uri: http://localhost:12000
+
+#需用使用此配置，先停用application，如果要改配置文件去git上改
+#配置有rabbitmq和监听器，localhost:12000/actuator/bus-refresh用post提交可以热刷新
+#监听器刷新只会刷新框架自带的配置文件，自定义的配置文件需要在controller层加上@RefreshScope注解

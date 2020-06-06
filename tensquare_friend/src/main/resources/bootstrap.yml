@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: friend      #config配置文件前面字段
+      profile: dev    #config配置文件后面字段
+      label: master
+      uri: http://localhost:12000

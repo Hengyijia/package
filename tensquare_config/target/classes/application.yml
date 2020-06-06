@@ -1,0 +1,17 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: tensquare-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/lijian_1998/tensquare.git
+  rabbitmq:
+    host: 127.0.0.1
+management:       #暴露触发消息总线的地址
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

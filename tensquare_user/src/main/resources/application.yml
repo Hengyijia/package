@@ -1,0 +1,29 @@
+server: 
+  port: 9008
+spring: 
+  application:  
+    name: tensquare-user #指定服务名
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tensquare_user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=UTC
+    username: root
+    password: mypassword
+  jpa:
+    database: mysql
+    show-sql: true
+  redis:
+    host: 127.0.0.1
+  rabbitmq:
+    host: 127.0.0.1
+
+jwt:
+  config:
+    key: hengyijia  #设置盐
+    ttl: 3600000 #设置过期时间(毫秒)
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true
